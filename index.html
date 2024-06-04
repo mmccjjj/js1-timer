@@ -7,9 +7,27 @@
 </head>
 <body>
 
-    <script>src="/scrip.js"</script>
+    <script src="/script.js"></script>
 
-    <h1 id="timerTest"></h1>
+
+    <input id="inDay" type="number">
+    <input id="inHour" type="number">
+    <input id="inMin" type="number">
+    <input id="inSec" type="number">
+
+    <p id="timerDay"></p>
+    <p id="timerHour"></p>
+    <p id="timerMin"></p>
+    <p id="timerSec"></p>
+
+    <script>resetTimer()</script>  <!-- Setzt Am Anfang alles auf 0 -->
+
+    <button type="button" onclick="startTimer()">Start</button>
+    
+
+    <button type="button" onclick="stopTimer()">Stop</button>
+
+    <button type="button" onclick="resetTimer()">Reset</button>
     
 </body>
 </html>

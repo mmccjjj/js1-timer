@@ -10,37 +10,37 @@
 </head>
 <body>
 
-    <div id="page">
+<div id="page">
 
-
-    <div class="schiebereglerContainer">
-        <input type="range" min="0" max="59" value="0" class="schieberegeler" id="schiebeSec" oninput="syncSec()">
-        <input type="range" min="0" max="59" value="0" class="schieberegeler" id="schiebeMin" oninput="syncMin()">
-        <input type="range" min="0" max="59" value="0" class="schieberegeler" id="schiebeHour" oninput="syncHour()">
-        <input type="range" min="0" max="100" value="0" class="schieberegeler" id="schiebeDay" oninput="syncDay()">
-
-
+    <div id="eingabe">
+        <div id="regler">
+            <input type="range" min="0" max="59" value="0" class="schieberegeler" id="schiebeSec" oninput="syncSec()">
+            <input type="range" min="0" max="59" value="0" class="schieberegeler" id="schiebeMin" oninput="syncMin()">
+            <input type="range" min="0" max="59" value="0" class="schieberegeler" id="schiebeHour" oninput="syncHour()">
+            <input type="range" min="0" max="100" value="0" class="schieberegeler" id="schiebeDay" oninput="syncDay()">
         </div>
 
-
-    <input id="inDay" type="number" class="inputFeld" placeholder="Tage">
-    <input id="inHour" type="number" class="inputFeld" placeholder="Stunden">
-    <input id="inMin" type="number" class="inputFeld" placeholder="Minuten">
-    <input id="inSec" type="number" class="inputFeld"  placeholder="Sekunden">
-
-
-    <div id="display">
-    <p id="timerDay" class="displayItem"></p>
-    <p id="timerHour" class="displayItem"></p>
-    <p id="timerMin" class="displayItem"></p>
-    <p id="timerSec" class="displayItem"></p>
+        <div id="felder">
+            <input id="inDay" type="number" class="inputFeld">
+            <input id="inHour" type="number" class="inputFeld">
+            <input id="inMin" type="number" class="inputFeld">
+            <input id="inSec" type="number" class="inputFeld">
+        </div>
     </div>
 
-    <button type="button" onclick="startTimer()">Start</button>
-    
-    <button type="button" onclick="stopTimer()">Stop</button>
-
-    <button type="button" onclick="resetTimer()">Reset</button>
+    <div id="displaycont">
+        <div id="display">
+            <p id="timerDay" class="displayItem"></p>
+            <p id="timerHour" class="displayItem"></p>
+            <p id="timerMin" class="displayItem"></p>
+            <p id="timerSec" class="displayItem"></p>
+        </div>
+    </div>
+    <div id="controls">
+        <button type="button" onclick="startTimer()">Start</button>
+        <button id="stop" type="button" onclick="stopTimer()">Stop</button>
+        <button type="button" onclick="resetTimer()">Reset</button>
+    </div>
 </div>
 
 

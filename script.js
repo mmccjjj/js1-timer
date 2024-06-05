@@ -9,6 +9,28 @@ let alarmSound= new Audio("/sounds/alarm-clock-70648.mp3");
 
 
 
+function syncSec(){
+    document.getElementById("inSec").value= document.getElementById("schiebeSec").value;
+
+}
+
+function syncMin(){
+    document.getElementById("inMin").value= document.getElementById("schiebeMin").value;
+
+}
+
+function syncHour(){
+    document.getElementById("inHour").value= document.getElementById("schiebeHour").value;
+
+}
+
+function syncDay(){
+    document.getElementById("inDay").value= document.getElementById("schiebeDay").value;
+
+}
+
+
+
 function timer(){
     if(sec== 0){
         if(min== 0){
@@ -52,6 +74,7 @@ function timer(){
 
 
 function startTimer(){
+
     if (!timerInt){
         if (day== 0&& hour== 0&& min== 0&& sec== 0) {
 
@@ -60,7 +83,7 @@ function startTimer(){
         min = document.getElementById("inMin").value || 0;
         sec = document.getElementById("inSec").value || 0;
         }
-        timerInt= setInterval(timer,10);
+        timerInt= setInterval(timer,1000);
 }
 }
 
@@ -88,5 +111,47 @@ function resetTimer(){
     document.getElementById("inMin").value= null;
     document.getElementById("inHour").value= null;
     document.getElementById("inDay").value= null;
+    document.getElementById("schiebeSec").value= 0;
+    document.getElementById("schiebeMin").value= 0;
+    document.getElementById("schiebeHour").value= 0;
+    document.getElementById("schiebeDay").value= 0;
 }
+
+
+
+
+document.addEventListener("DOMContentLoaded", resetTimer)
+
+
+document.getElementById("inSec").addEventListener('keydown', function(event) {
+    event.preventDefault();
+});
+
+document.getElementById("inSec").addEventListener('mousedown', function(event) {
+    event.preventDefault();
+});
+
+document.getElementById("inMin").addEventListener('keydown', function(event) {
+    event.preventDefault();
+});
+
+document.getElementById("inMin").addEventListener('mousedown', function(event) {
+    event.preventDefault();
+});
+
+document.getElementById("inHour").addEventListener('keydown', function(event) {
+    event.preventDefault();
+});
+
+document.getElementById("inHour").addEventListener('mousedown', function(event) {
+    event.preventDefault();
+});
+
+document.getElementById("inDay").addEventListener('keydown', function(event) {
+    event.preventDefault();
+});
+
+document.getElementById("inDay").addEventListener('mousedown', function(event) {
+    event.preventDefault();
+});
 

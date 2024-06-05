@@ -9,27 +9,41 @@
     
 </head>
 <body>
-    <script src="/script.js"></script>
+
+    <div id="page">
 
 
-    <input id="inDay" type="number" placeholder="Tage">
-    <input id="inHour" type="number" placeholder="Stunden">
-    <input id="inMin" type="number" placeholder="Minuten">
-    <input id="inSec" type="number" placeholder="Sekunden">
+    <div class="schiebereglerContainer">
+        <input type="range" min="0" max="59" value="0" class="schieberegeler" id="schiebeSec" oninput="syncSec()">
+        <input type="range" min="0" max="59" value="0" class="schieberegeler" id="schiebeMin" oninput="syncMin()">
+        <input type="range" min="0" max="59" value="0" class="schieberegeler" id="schiebeHour" oninput="syncHour()">
+        <input type="range" min="0" max="100" value="0" class="schieberegeler" id="schiebeDay" oninput="syncDay()">
 
-    <p id="timerDay"></p>
-    <p id="timerHour"></p>
-    <p id="timerMin"></p>
-    <p id="timerSec"></p>
 
-    <script>resetTimer()</script>  <!-- Setzt Am Anfang alles auf 0 -->
+        </div>
+
+
+    <input id="inDay" type="number" class="inputFeld" placeholder="Tage">
+    <input id="inHour" type="number" class="inputFeld" placeholder="Stunden">
+    <input id="inMin" type="number" class="inputFeld" placeholder="Minuten">
+    <input id="inSec" type="number" class="inputFeld"  placeholder="Sekunden">
+
+
+    <div id="display">
+    <p id="timerDay" class="displayItem"></p>
+    <p id="timerHour" class="displayItem"></p>
+    <p id="timerMin" class="displayItem"></p>
+    <p id="timerSec" class="displayItem"></p>
+    </div>
 
     <button type="button" onclick="startTimer()">Start</button>
     
     <button type="button" onclick="stopTimer()">Stop</button>
 
     <button type="button" onclick="resetTimer()">Reset</button>
+</div>
 
-    
+
+<script src="/script.js"></script>
 </body>
 </html>

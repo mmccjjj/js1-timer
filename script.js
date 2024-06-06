@@ -5,6 +5,7 @@ let min;
 let hour;
 let day;
 let alarmSound= new Audio("/sounds/alarm-clock-70648.mp3");
+let clickSound= new Audio("/sounds/click.mp3")
 
 
 
@@ -45,10 +46,13 @@ function syncDay(){
 
 
 function timer(){
+    clickSound.currentTime= 0;
+    clickSound.play()
     if(sec== 0){
         if(min== 0){
             if(hour== 0){
                 if(day== 0){
+                    clickSound.pause();
                     stopTimer();
                     alarmSound.play();
                     alert("Timer ist fertig");
@@ -72,7 +76,7 @@ function timer(){
               }else{
                 sec--;
               }
-              
+              clickSound.play()
               document.getElementById("timerDay").innerText= day.toString().padStart(2,"0");
               document.getElementById("timerHour").innerText= hour.toString().padStart(2,"0");
               document.getElementById("timerMin").innerText= min.toString().padStart(2,"0");

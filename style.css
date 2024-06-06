@@ -3,12 +3,6 @@
   padding: 0;
 }
 
-input::-webkit-outer-spin-button,
-input::-webkit-inner-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
-}
-
 .schieberegeler::-webkit-slider-thumb {
   -webkit-appearance: none;
   appearance: none;
@@ -51,11 +45,6 @@ input::-webkit-inner-spin-button {
 }
 
 
-
-input[type=number] {
-    -moz-appearance: textfield;
-  }
-  
   #eingabe{
     display: flex;
     justify-content: space-between;
@@ -66,20 +55,6 @@ input[type=number] {
 
     display: flex;
     flex-direction: column;
-  }
-
-  #felder{
-    max-width: 42%;
-    display: flex;
-    flex-direction: column-reverse;
-    justify-content: space-between;
-
-  }
-
-  .inputFeld{
-    height: 20px;
-    text-align: center;
-    width: 20%;
   }
 
   #controls{

@@ -10,22 +10,35 @@ let alarmSound= new Audio("/sounds/alarm-clock-70648.mp3");
 
 
 function syncSec(){
-    document.getElementById("inSec").value= document.getElementById("schiebeSec").value;
+   let wert= document.getElementById("schiebeSec").value;
+   wert= wert.padStart(2,"0");
+   sec= parseInt(wert, 10);
+   document.getElementById("timerSec").innerText= wert;
+
 
 }
 
 function syncMin(){
-    document.getElementById("inMin").value= document.getElementById("schiebeMin").value;
+    let wert= document.getElementById("schiebeMin").value;
+    wert= wert.padStart(2,"0");
+    document.getElementById("timerMin").innerText= wert;
+    min= parseInt(wert);
 
 }
 
 function syncHour(){
-    document.getElementById("inHour").value= document.getElementById("schiebeHour").value;
+    let wert= document.getElementById("schiebeHour").value;
+    wert= wert.padStart(2,"0");
+    document.getElementById("timerHour").innerText= wert;
+    hour= parseInt(wert);
 
 }
 
 function syncDay(){
-    document.getElementById("inDay").value= document.getElementById("schiebeDay").value;
+    let wert= document.getElementById("schiebeDay").value;
+    wert= wert.padStart(2,"0");
+    document.getElementById("timerDay").innerText= wert;
+    day= parseInt(wert);
 
 }
 
@@ -59,32 +72,19 @@ function timer(){
               }else{
                 sec--;
               }
-    
-    
-    hour= hour.toString().padStart(2,"0")
-    min= min.toString().padStart(2,"0")
-    sec= sec.toString().padStart(2,"0")
-       
-    document.getElementById("timerDay").innerText= day
-    document.getElementById("timerHour").innerText= hour
-    document.getElementById("timerMin").innerText= min
-    document.getElementById("timerSec").innerText= sec
-}
-
+              
+              document.getElementById("timerDay").innerText= day.toString().padStart(2,"0");
+              document.getElementById("timerHour").innerText= hour.toString().padStart(2,"0");
+              document.getElementById("timerMin").innerText= min.toString().padStart(2,"0");
+              document.getElementById("timerSec").innerText= sec.toString().padStart(2,"0");
+            }
 
 
 function startTimer(){
 
     if (!timerInt){
-        if (day== 0&& hour== 0&& min== 0&& sec== 0) {
-
-        day = document.getElementById("inDay").value || 0;
-        hour = document.getElementById("inHour").value || 0;
-        min = document.getElementById("inMin").value || 0;
-        sec = document.getElementById("inSec").value || 0;
-        }
         timerInt= setInterval(timer,1000);
-}
+        }
 }
 
 function stopTimer(){
@@ -99,18 +99,16 @@ function resetTimer(){
     hour= 0;
     day= 0;
 
+    day= day.toString().padStart(2,"0");
     hour= hour.toString().padStart(2,"0");
     min= min.toString().padStart(2,"0");
     sec= sec.toString().padStart(2,"0");
+    
 
     document.getElementById("timerSec").innerText= sec;
     document.getElementById("timerMin").innerText= min;
     document.getElementById("timerHour").innerText= hour;
     document.getElementById("timerDay").innerText= day;
-    document.getElementById("inSec").value= null;
-    document.getElementById("inMin").value= null;
-    document.getElementById("inHour").value= null;
-    document.getElementById("inDay").value= null;
     document.getElementById("schiebeSec").value= 0;
     document.getElementById("schiebeMin").value= 0;
     document.getElementById("schiebeHour").value= 0;
@@ -120,38 +118,4 @@ function resetTimer(){
 
 
 
-document.addEventListener("DOMContentLoaded", resetTimer)
-
-
-document.getElementById("inSec").addEventListener('keydown', function(event) {
-    event.preventDefault();
-});
-
-document.getElementById("inSec").addEventListener('mousedown', function(event) {
-    event.preventDefault();
-});
-
-document.getElementById("inMin").addEventListener('keydown', function(event) {
-    event.preventDefault();
-});
-
-document.getElementById("inMin").addEventListener('mousedown', function(event) {
-    event.preventDefault();
-});
-
-document.getElementById("inHour").addEventListener('keydown', function(event) {
-    event.preventDefault();
-});
-
-document.getElementById("inHour").addEventListener('mousedown', function(event) {
-    event.preventDefault();
-});
-
-document.getElementById("inDay").addEventListener('keydown', function(event) {
-    event.preventDefault();
-});
-
-document.getElementById("inDay").addEventListener('mousedown', function(event) {
-    event.preventDefault();
-});
-
+document.addEventListener("DOMContentLoaded", resetTimer);

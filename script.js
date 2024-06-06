@@ -92,6 +92,7 @@ function startTimer(){
 }
 
 function stopTimer(){
+    clickSound.pause();
     clearInterval(timerInt);
     timerInt= null;
 

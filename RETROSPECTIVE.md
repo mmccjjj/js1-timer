@@ -13,3 +13,7 @@ Ich habe zuerst mit meinen Möglichkeiten einen Timer programmiert der einfach h
 
 ## Negativ
 - mir fällt gerade nichts ein ???
+
+
+## Bekannter Bug
+Im Chrome Browser spielt der Alarmsound teils erst nach dem bestätigen des alerts ab und nicht wie gewollt mit dem alert zusammen. In Firefox scheint es zu funktionieren... Konnte keine Lösung finden...

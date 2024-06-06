@@ -85,10 +85,12 @@ function timer(){
 
 
 function startTimer(){
+    if (!(day== 0&& hour== 0&& min== 0&& sec== 0)){
 
     if (!timerInt){
         timerInt= setInterval(timer,1000);
         }
+    }
 }
 
 function stopTimer(){

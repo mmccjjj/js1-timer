@@ -195,6 +195,7 @@ margin-left: 4%;
 
   .displayItem{
     font-size: 18vh;
+    text-shadow: 0 0 2px #fff,0 0 4px #c00707ee, 0 0 6px #c00707d8, 0 0 8px #c00707b0, 0 0 10px #c0070760;
   }
   button{
     font-size: 40px;

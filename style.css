@@ -106,8 +106,6 @@ margin-left: 4%;
 }
 
 #display {
-    width:fit-content;
-    height: 8vh;
     display: flex;
     justify-content: center;
     background-color: #222121;
@@ -189,7 +187,6 @@ margin-left: 4%;
   }
 
   #display{
-    height: 15vh;
 
   }
 

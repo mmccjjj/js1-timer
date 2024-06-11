@@ -5,7 +5,7 @@
 
 @font-face{
   font-family: "digiClock";
-  src: url(/fonts/digital-7\ \(mono\).ttf);
+  src: url(/fonts/digital-7\ \(mono\).ttf)
 }
 
 @font-face{
@@ -22,6 +22,7 @@ html{
   display: flex;
   flex-direction: column;
   padding-top: 15%;
+  
 }
 
 h1{
@@ -88,15 +89,6 @@ h1{
   border-radius: 5px;
 }
 
-#timerHour{
-margin-left: 4%;
-}
-
-#timerMin{
-  margin-left: 4%;
-  margin-right: 4%;
-  }
-
 #displaycont{
   width: 100%;
   display: flex;
@@ -106,9 +98,12 @@ margin-left: 4%;
 }
 
 #display {
+    height: 5rem;
+    width: fit-content;
     display: flex;
     justify-content: center;
     background-color: #222121;
+    gap: 4%;
     padding-left: 5%;
     padding-right: 5%;
     border-radius: 10px;
@@ -116,16 +111,16 @@ margin-left: 4%;
     border-style: solid;
     border-width: 3px;
     box-shadow: 0px 0px 20px -1px #0AC91A;
+    
    
 }
 
 .displayItem{
-
   font-family: "digiClock";
   text-shadow: 0 0 1px #fff,0 0 2px #c00707ee, 0 0 4px #c00707d8, 0 0 6px #c00707b0, 0 0 8px #c0070760;
   text-align: center;
   color: #c00707;
-  font-size: 10vh;
+  font-size: 6rem;
 }
 
 
@@ -187,11 +182,12 @@ margin-left: 4%;
   }
 
   #display{
+    height: 12rem;
 
   }
 
   .displayItem{
-    font-size: 18vh;
+    font-size: 15rem;
     text-shadow: 0 0 2px #fff,0 0 4px #c00707ee, 0 0 6px #c00707d8, 0 0 8px #c00707b0, 0 0 10px #c0070760;
   }
   button{

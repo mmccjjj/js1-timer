@@ -4,43 +4,45 @@ let sec;
 let min;
 let hour;
 let day;
+let schiebeSec= document.getElementById("schiebeSec");
+let schiebeMin= document.getElementById("schiebeMin");
+let schiebeHour= document.getElementById("schiebeHour");
+let schiebeDay= document.getElementById("schiebeDay");
+let disSec= document.getElementById("timerSec");
+let disMin= document.getElementById("timerMin");
+let disHour= document.getElementById("timerHour");
+let disDay= document.getElementById("timerDay");
 let alarmSound= new Audio("/sounds/alarm-clock-70648.mp3");
-let clickSound= new Audio("/sounds/click.mp3")
+let clickSound= new Audio("/sounds/click.mp3");
+
 
 
 
 
 function syncSec(){
-   let wert= document.getElementById("schiebeSec").value;
-   wert= wert.padStart(2,"0");
-   sec= parseInt(wert, 10);
-   document.getElementById("timerSec").innerText= wert;
+    let wertSec = document.getElementById("schiebeSec").value.padStart(2, "0");
+    disSec.innerText= wertSec;
+    sec= parseInt(wertSec, 10);
 
 
 }
 
-function syncMin(){
-    let wert= document.getElementById("schiebeMin").value;
-    wert= wert.padStart(2,"0");
-    document.getElementById("timerMin").innerText= wert;
-    min= parseInt(wert);
-
+function syncMin() {
+    let wertMin = document.getElementById("schiebeMin").value.padStart(2, "0");
+    disMin.innerText = wertMin;
+    min = parseInt(wertMin, 10);
 }
 
-function syncHour(){
-    let wert= document.getElementById("schiebeHour").value;
-    wert= wert.padStart(2,"0");
-    document.getElementById("timerHour").innerText= wert;
-    hour= parseInt(wert);
-
+function syncHour() {
+    let wertHour = document.getElementById("schiebeHour").value.padStart(2, "0");
+    disHour.innerText = wertHour;
+    hour = parseInt(wertHour, 10);
 }
 
-function syncDay(){
-    let wert= document.getElementById("schiebeDay").value;
-    wert= wert.padStart(2,"0");
-    document.getElementById("timerDay").innerText= wert;
-    day= parseInt(wert);
-
+function syncDay() {
+    let wertDay = document.getElementById("schiebeDay").value.padStart(2, "0");
+    disDay.innerText = wertDay;
+    day = parseInt(wertDay, 10);
 }
 
 
@@ -54,6 +56,10 @@ function timer(){
                 if(day== 0){
                     clickSound.pause();
                     stopTimer();
+                    schiebeSec.value= 0;
+                    schiebeMin.value= 0;
+                    schiebeHour.value= 0;
+                    schiebeHour.value= 0;
                     alarmSound.play();
                     alert("Timer ist fertig");
                     return;
@@ -77,10 +83,10 @@ function timer(){
                 sec--;
               }
               clickSound.play()
-              document.getElementById("timerDay").innerText= day.toString().padStart(2,"0");
-              document.getElementById("timerHour").innerText= hour.toString().padStart(2,"0");
-              document.getElementById("timerMin").innerText= min.toString().padStart(2,"0");
-              document.getElementById("timerSec").innerText= sec.toString().padStart(2,"0");
+              disDay.innerText= day.toString().padStart(2,"0");
+              disHour.innerText= hour.toString().padStart(2,"0");
+              disMin.innerText= min.toString().padStart(2,"0");
+              disSec.innerText= sec.toString().padStart(2,"0");
             }
 
 
@@ -90,6 +96,13 @@ function startTimer(){
     if (!timerInt){
         timerInt= setInterval(timer,1000);
         }
+    
+    document.getElementById("schiebeSec").disabled= true;
+    document.getElementById("schiebeMin").disabled= true;
+    document.getElementById("schiebeHour").disabled= true;
+    document.getElementById("schiebeDay").disabled= true;
+    }else{
+        alert("Kein Zeit eingegeben")
     }
 }
 
@@ -97,6 +110,11 @@ function stopTimer(){
     clickSound.pause();
     clearInterval(timerInt);
     timerInt= null;
+    document.getElementById("schiebeSec").disabled= false;
+    document.getElementById("schiebeMin").disabled= false;
+    document.getElementById("schiebeHour").disabled= false;
+    document.getElementById("schiebeDay").disabled= false;
+
 
 }
 
@@ -112,14 +130,14 @@ function resetTimer(){
     sec= sec.toString().padStart(2,"0");
     
 
-    document.getElementById("timerSec").innerText= sec;
-    document.getElementById("timerMin").innerText= min;
-    document.getElementById("timerHour").innerText= hour;
-    document.getElementById("timerDay").innerText= day;
-    document.getElementById("schiebeSec").value= 0;
-    document.getElementById("schiebeMin").value= 0;
-    document.getElementById("schiebeHour").value= 0;
-    document.getElementById("schiebeDay").value= 0;
+    disSec.innerText= sec;
+    disMin.innerText= min;
+    disHour.innerText= hour;
+    disDay.innerText= day;
+    schiebeSec.value= 0;
+    schiebeMin.value= 0;
+    schiebeHour.value= 0;
+    schiebeHour.value= 0;
 }
 
 

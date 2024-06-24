@@ -3,31 +3,54 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Timer</title>
+    <link rel="stylesheet" href="/style.css">
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
+    <link rel="manifest" href="/favicon/site.webmanifest">
+    
 </head>
 <body>
 
-    <script src="/script.js"></script>
+<header>
+    <H1>Countdown</H1>
+</header>
 
+<main>
+<div id="page">
 
-    <input id="inDay" type="number">
-    <input id="inHour" type="number">
-    <input id="inMin" type="number">
-    <input id="inSec" type="number">
+    <div id="timer">
+        <div id="eingabe">
+            <div id="regler">
+                <input type="range" min="0" max="59" value="0" class="schieberegler" id="schiebeSec" oninput="syncSec()">
+                <input type="range" min="0" max="59" value="0" class="schieberegler" id="schiebeMin" oninput="syncMin()">
+                <input type="range" min="0" max="23" value="0" class="schieberegler" id="schiebeHour" oninput="syncHour()">
+                <input type="range" min="0" max="99" value="0" class="schieberegler" id="schiebeDay" oninput="syncDay()">
+            </div>
+        </div>
 
-    <p id="timerDay"></p>
-    <p id="timerHour"></p>
-    <p id="timerMin"></p>
-    <p id="timerSec"></p>
+        <div id="displaycont">
+            <div id="display">
+                <div id="timerDay" class="displayItem"></div>
+                <div id="timerHour" class="displayItem"></div>
+                <div id="timerMin" class="displayItem"></div>
+                <div id="timerSec" class="displayItem"></div>
+            </div>
+        </div>
+        <div id="controls">
+            <button type="button" onclick="startTimer()">Start</button>
+            <button id="stop" type="button" onclick="stopTimer()">Stop</button>
+            <button type="button" onclick="resetTimer()">Reset</button>
+        </div>
+    </div>
+</div>
+</main>
 
-    <script>resetTimer()</script>  <!-- Setzt Am Anfang alles auf 0 -->
+<footer>
 
-    <button type="button" onclick="startTimer()">Start</button>
-    
+</footer>
 
-    <button type="button" onclick="stopTimer()">Stop</button>
-
-    <button type="button" onclick="resetTimer()">Reset</button>
-    
+<script src="/script.js"></script>
 </body>
 </html>

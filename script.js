@@ -86,7 +86,7 @@ function timer(){
               disDay.innerText= day.toString().padStart(2,"0");
               disHour.innerText= hour.toString().padStart(2,"0");
               disMin.innerText= min.toString().padStart(2,"0");
-              disSec.innerText= sec.toString().padStart(2,"0");
+              disSec.innerText = sec.toString().padStart(2, "0");
             }
 
 
@@ -137,7 +137,7 @@ function resetTimer(){
     schiebeSec.value= 0;
     schiebeMin.value= 0;
     schiebeHour.value= 0;
-    schiebeHour.value= 0;
+    schiebeDay.value= 0;
 }
 
 
